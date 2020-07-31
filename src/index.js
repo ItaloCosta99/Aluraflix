@@ -9,7 +9,7 @@ import CadastroCategoria from './pages/cadastro/Categoria';
 
 // Desafio master blaster na descrição
 // Colocar um jogo nessa página: https://www.youtube.com/watch?v=jOAU81jdi-c :)
-const Pagina404 = () => (<div>Página 404</div>)
+const Pagina404 = () => (<div>Página 404</div>);
 
 ReactDOM.render(
   <BrowserRouter>
@@ -20,10 +20,9 @@ ReactDOM.render(
       <Route component={Pagina404} />
     </Switch>
   </BrowserRouter>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-
