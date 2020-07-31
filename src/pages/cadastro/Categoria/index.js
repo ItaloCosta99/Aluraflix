@@ -30,7 +30,9 @@ function CadastroCategoria() {
 
   useEffect(() => {
     /* console.log('Teste'); */
-    const URL = 'http://localhost:8080/categorias';
+    const URL = window.location.hostname.includes('localhost')
+      ? 'http://localhost:8080/categorias'
+      : 'https://italocosta99flix.herokuapp.com/categorias';
 
     fetch(URL)
       .then(async (servRes) => {
