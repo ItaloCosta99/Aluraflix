@@ -1,7 +1,10 @@
+/* eslint-disable react/forbid-prop-types */
+/* eslint-disable react/require-default-props */
 import React from 'react';
+import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
 import Menu from '../Menu';
 import Footer from '../Footer';
-import styled from 'styled-components';
 
 const Main = styled.main`
   background-color: var(--black);
@@ -10,19 +13,26 @@ const Main = styled.main`
   padding-top: 50px;
   padding-left: 5%;
   padding-right: 5%;
+  ${({ paddingAll }) => css`
+    padding: ${paddingAll};
+  `}
 `;
 
-
-function PageDefault({ children }) {
+function PageDefault({ children, paddingAll }) {
   return (
     <>
       <Menu />
-        <Main>
-          {children}
-        </Main>
+      <Main paddingAll={paddingAll}>
+        {children}
+      </Main>
       <Footer />
     </>
   );
 }
+
+PageDefault.propTypes = {
+  children: PropTypes.any.isRequired,
+  paddingAll: PropTypes.any,
+};
 
 export default PageDefault;
